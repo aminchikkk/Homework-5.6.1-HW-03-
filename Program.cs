@@ -31,7 +31,7 @@ namespace Homework5._6
             User.surname = surname;
             Console.Write("Введите свой возраст цифрами:");
             string? stringAge= Console.ReadLine();
-            CheckNum(stringAge, out byte intAge);
+            CheckNum(stringAge, out byte byteAge);
             User.age = age;
             Console.WriteLine("У вас есть питомец?");
             string? answer = Console.ReadLine();
@@ -106,14 +106,14 @@ namespace Homework5._6
         /// <summary>
         /// Проверка правильности ввода возраста.
         /// </summary>
-        public static void CheckNum(string age, out byte intAge)
+        public static void CheckNum(string age, out byte byteAge)
         {
-            intAge = 0;
+            byteAge = 0;
             do
             {
                 try
                 {
-                    intAge = byte.Parse(age);
+                    byteAge = byte.Parse(age);
                 }
                 catch
                 {
@@ -122,7 +122,7 @@ namespace Homework5._6
                     Console.WriteLine("Попробуйте снова!");
                     age=Console.ReadLine();
                 }
-            } while (intAge == 0);
+            } while (byteAge == 0);
         }
     }
 }
